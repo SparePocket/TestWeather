@@ -31,7 +31,7 @@ namespace TestWeather.Services
 
         public async Task<Weather> GetCurrentAsync(GeoCoordinate coordinate)
         {
-            string uri = $"/v1/forecast?latitude={coordinate.Latitude}&longitude={coordinate.Longitude}&hourly=temperature_2m&current_weather=true";
+            string uri = $"/v1/forecast?latitude={coordinate.Latitude}&longitude={coordinate.Longitude}&hourly=temperature_2m&current_weather=true&temperature_unit=fahrenheit";
 
 
             var response = await _httpClient.GetFromJsonAsync<Weather>(uri);
